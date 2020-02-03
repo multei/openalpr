@@ -36,6 +36,10 @@
     "@babel/preset-env": "7.8.4",
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "7.1.1",
+    "@stryker-mutator/core": "2.5.0",
+    "@stryker-mutator/html-reporter": "^2.5.0",
+    "@stryker-mutator/javascript-mutator": "^2.5.0",
+    "@stryker-mutator/jest-runner": "^2.5.0",
     "babel-jest": "25.1.0",
     "jest": "25.1.0",
     "rollup": "1.31.0"

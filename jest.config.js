@@ -21,14 +21,9 @@ module.exports = {
     "node_modules"
   ],
   moduleFileExtensions: ["js"],
-  notify: true,
   roots: ['<rootDir>'],
-  testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   testPathIgnorePatterns: ignorePatterns,
-  transform: {
-    '^.+\\.[t|j]sx?$': ['babel-jest'],
-  },
   transformIgnorePatterns: ignorePatterns,
   watchman: true
 };
