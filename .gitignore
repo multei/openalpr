@@ -103,3 +103,6 @@ public
 
 # IDEA Workspace file
 .idea/workspace.xml
+
+# stryker temp files
+.stryker-tmp
