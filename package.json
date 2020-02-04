@@ -49,5 +49,8 @@
   "dependencies": {
     "axios": "0.19.2"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "engines": {
+    "npm": ">=5.7.0"
+  }
 }
