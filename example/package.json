@@ -1,0 +1,14 @@
+{
+  "name": "openalpr-example",
+  "private": true,
+  "dependencies": {
+    "openalpr": "file:.."
+  },
+  "scripts": {
+    "build": "",
+    "develop": "node index.js",
+    "prepare": "npm run build",
+    "predeploy": "npm install && npm run build",
+    "start": "npm run develop"
+  }
+}
