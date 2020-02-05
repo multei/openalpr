@@ -1,19 +1,24 @@
 {
   "name": "openalpr",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Open ALPR JavaScript SDK for Multei",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "npm run develop",
     "develop": "rollup -c -w",
     "jest": "jest",
+    "predeploy": "cd example && npm install && npm run build",
+    "prepare": "npm run build",
     "pretest": "npm run build",
-    "stryker": "stryker run",
+    "preversion": "npm test",
     "start": "npm run develop",
-    "test": "jest"
+    "stryker": "stryker run",
+    "test": "jest",
+    "version": "npm run build"
   },
   "files": [
     "dist"
@@ -50,6 +55,7 @@
     "axios": "0.19.2"
   },
   "engines": {
+    "node": ">=8",
     "npm": ">=5.7.0"
   }
 }
