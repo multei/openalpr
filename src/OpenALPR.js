@@ -1,6 +1,4 @@
 import axios from "axios";
-import toBase64 from "./toBase64";
-import defaults from "./defaults";
 import removeBase64Prefix from "./removeBase64Prefix";
 import handleErrorResponse from "./handleErrorResponse";
 import handleResponse from "./handleResponse";
@@ -24,7 +22,6 @@ function OpenALPR(instanceConfig) {
 OpenALPR.prototype.recognize = async function recognize(data, config = {}) {
     config = {...this.defaults, ...config}
     const instance = axios.create({baseURL: 'https://api.openalpr.com/v2'})
-    console.log(data)
     const url = `/recognize_bytes?recognize_vehicle=1&country=br&secret_key=${config["secretKey"]}`
     try {
         data = removeBase64Prefix(data)
