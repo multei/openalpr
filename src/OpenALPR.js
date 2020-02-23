@@ -1,4 +1,5 @@
 import axios from "axios";
+const debug = require('debug')('openalpr')
 import removeBase64Prefix from "./removeBase64Prefix";
 import handleErrorResponse from "./handleErrorResponse";
 import handleResponse from "./handleResponse";
@@ -10,6 +11,7 @@ import handleResponse from "./handleResponse";
  * @constructor
  */
 function OpenALPR(instanceConfig) {
+    debug('Constructing OpenALPR instance...')
     this.defaults = instanceConfig
 }
 
@@ -26,16 +28,29 @@ OpenALPR.prototype.recognize = async function recognize(data, config = {}) {
     if(data === '' || data === null) {
         throw new Error('Image data is empty or null. Please check recognize() function call')
     }
+
+    debug('Setting config...')
     config = {...this.defaults, ...config}
+
+    debug('Creating axios instance with OpenALPR API data...')
     const instance = axios.create({baseURL: 'https://api.openalpr.com/v2'})
+
+    debug('Building request URL...')
     const url = `/recognize_bytes?recognize_vehicle=1&country=br&secret_key=${config["secretKey"]}`
+
     try {
+        debug('Removing base64 prefix (if needed)...')
         data = removeBase64Prefix(data)
+
+        debug('Making request to OpenALPR with raw data...')
         const response = await instance.post(url, data, { headers: {'content-type': 'raw'} })
+
+        debug('Calling response handler...')
         return handleResponse(response)
     }
     catch (error) {
-        return handleErrorResponse(error)
+        debug('Calling error handler...')
+        throw handleErrorResponse(error)
     }
 }
 

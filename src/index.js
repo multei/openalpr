@@ -1,3 +1,4 @@
+const debug = require('debug')('openalpr')
 import OpenALPR from "./OpenALPR";
 import defaults from "./defaults";
 
@@ -8,6 +9,7 @@ import defaults from "./defaults";
  * @return {OpenALPR} A new instance of OpenALPR
  */
 function createInstance(instanceConfig = defaults) {
+    debug('Creating an instance...')
     return new OpenALPR(instanceConfig);
 }
 
@@ -30,6 +32,7 @@ openALPR.OpenALPR = OpenALPR
  * @return {OpenALPR}
  */
 openALPR.create = function create(instanceConfig) {
+    debug('Returning the new instance...')
     return createInstance({...defaults, ...instanceConfig})
 }
 
