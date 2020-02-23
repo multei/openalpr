@@ -1,10 +1,10 @@
 const config = require('./config')
 const openALPR = require('openalpr').create(config)
 
-openALPR.recognize(require('./images/valid-image'))
-    .then(r => console.log('Response', r))
-    .catch(e => console.error('Error', e))
+const values = [null, '', 'invalid string', require('./images/valid-image')]
 
-openALPR.recognize('invalid string')
-    .then(r => console.log('Response', r))
-    .catch(e => console.error('Error', e))
+values.map(data => {
+    openALPR.recognize(data)
+        .then(r => console.log('Response', r))
+        .catch(e => console.error('Error', e))
+})

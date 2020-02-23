@@ -20,6 +20,12 @@ function OpenALPR(instanceConfig) {
  * @return {Promise<*>}
  */
 OpenALPR.prototype.recognize = async function recognize(data, config = {}) {
+    if(typeof data === 'undefined') {
+        throw new Error('Image base64 data is missing. Please check recognize() function call')
+    }
+    if(data === '' || data === null) {
+        throw new Error('Image data is empty or null. Please check recognize() function call')
+    }
     config = {...this.defaults, ...config}
     const instance = axios.create({baseURL: 'https://api.openalpr.com/v2'})
     const url = `/recognize_bytes?recognize_vehicle=1&country=br&secret_key=${config["secretKey"]}`
