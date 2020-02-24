@@ -6,6 +6,7 @@
   },
   "scripts": {
     "build": "",
+    "debug": "DEBUG=openalpr,openalpr:* npm start",
     "develop": "node index.js",
     "prepare": "npm run build",
     "predeploy": "npm install && npm run build",

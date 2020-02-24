@@ -1,8 +1,10 @@
 import axios from "axios";
-const debug = require('debug')('openalpr')
+import Debug from 'debug'
 import removeBase64Prefix from "./removeBase64Prefix";
 import handleErrorResponse from "./handleErrorResponse";
 import handleResponse from "./handleResponse";
+
+const debug = Debug('openalpr:openalpr')
 
 /**
  * Create a new instance of OpenALPR

@@ -1,6 +1,8 @@
-const debug = require('debug')('openalpr')
+import Debug from 'debug';
 import OpenALPR from "./OpenALPR";
 import defaults from "./defaults";
+
+const debug = Debug('openalpr:main')
 
 /**
  * Create an instance of OpenALPR

@@ -1,4 +1,6 @@
-const debug = require('debug')('openalpr:handler:error')
+import Debug from 'debug'
+
+const debug = Debug('openalpr:handler:error')
 
 export default function handleErrorResponse(error) {
     debug('Handling error response...')
