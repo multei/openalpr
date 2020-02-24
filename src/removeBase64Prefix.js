@@ -12,6 +12,13 @@ export default function removeBase64Prefix(data) {
     debug('Splitting base64 prefix from image data...')
     const dataSplit = data.split(',');
 
-    debug('Returning split base64 data...')
-    return dataSplit[1];
+    debug('Checking if split data contains prefix...')
+    if(dataSplit.length > 1) {
+        debug('Split data contains prefix: %o', dataSplit[0])
+        return dataSplit[1];
+    }
+
+    debug('Returning original string (it does not have base64 prefix)')
+    return dataSplit[0];
+
 }

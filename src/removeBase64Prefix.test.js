@@ -8,6 +8,18 @@ describe('Base 64 prefix removal function', function () {
         expect(removeBase64Prefix(data)).toEqual(expected);
     });
 
+    it('should remove base64 prefix from unknown file format', function () {
+        const data = 'base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        const expected = 'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        expect(removeBase64Prefix(data)).toEqual(expected);
+    });
+
+    it('should not change string when it has no base64 data', function () {
+        const data = 'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        const expected = 'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        expect(removeBase64Prefix(data)).toEqual(expected);
+    });
+
     it('should throw an exception when base64 data is undefined', function () {
         const badFn = function () {
             removeBase64Prefix()

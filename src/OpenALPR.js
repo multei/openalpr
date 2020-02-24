@@ -24,6 +24,7 @@ function OpenALPR(instanceConfig) {
  * @return {Promise<*>}
  */
 OpenALPR.prototype.recognize = async function recognize(data, config = {}) {
+
     if(typeof data === 'undefined') {
         throw new Error('Image base64 data is missing. Please check recognize() function call')
     }
@@ -43,6 +44,10 @@ OpenALPR.prototype.recognize = async function recognize(data, config = {}) {
     try {
         debug('Removing base64 prefix (if needed)...')
         data = removeBase64Prefix(data)
+
+        if(typeof data === "undefined") {
+            throw new Error("Cannot make request to API. Image data is undefined after base64 prefix removal")
+        }
 
         debug('Making request to OpenALPR with raw data...')
         const response = await instance.post(url, data, { headers: {'content-type': 'raw'} })
