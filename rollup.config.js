@@ -20,6 +20,14 @@ export default [
         ]
     },
     {
+        input: 'src/index.js',
+        external: ['axios', 'debug'],
+        output: [
+            { file: pkg.main, format: 'cjs' },
+            { file: pkg.module, format: 'es' }
+        ]
+    },
+    {
         input: 'src/toBase64.js',
         external: ['debug'],
         output: {
@@ -34,11 +42,13 @@ export default [
         ]
     },
     {
-        input: 'src/index.js',
+        input: 'src/express-middleware.js',
         external: ['axios', 'debug'],
-        output: [
-            { file: pkg.main, format: 'cjs' },
-            { file: pkg.module, format: 'es' }
-        ]
+        output: {
+            name: 'express-middleware',
+            file: 'dist/express-middleware.js',
+            format: 'umd',
+            globals: {axios: 'axios', debug: 'debug'}
+        }
     }
 ];

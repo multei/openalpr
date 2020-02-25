@@ -1,6 +1,7 @@
+import Debug from 'debug'
 import OpenALPR from "./index";
 
-const debug = require('debug')('openalpr:express-middleware')
+const debug = Debug('openalpr:express-middleware')
 
 module.exports = (fileIndex, secretKey) => async (req, res, next) => {
 
