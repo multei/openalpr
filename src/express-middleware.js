@@ -3,6 +3,10 @@ import OpenALPR from "./index";
 
 const debug = Debug('openalpr:express-middleware')
 
+const openALPR = OpenALPR.create({
+  secretKey: process.env.OPENALPR_SECRET_KEY
+});
+
 module.exports = (fileIndex, secretKey) => async (req, res, next) => {
 
   debug('Entered OpenALPR middleware...')
@@ -26,12 +30,8 @@ module.exports = (fileIndex, secretKey) => async (req, res, next) => {
 
   };
 
-  const openALPR = OpenALPR.create({
-    secretKey: process.env.OPENALPR_SECRET_KEY
-  });
-
   try {
-    const encoded = req[fileIndex].buffer.toString('base64')
+    const encoded = req.files[fileIndex][0].buffer.toString('base64')
     debug('Generating encoded base64 file')
 
     debug('Starting vehicle recognition')
