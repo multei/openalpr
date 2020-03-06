@@ -5,7 +5,7 @@ const ignorePatterns = [
 
 module.exports = {
   collectCoverage: true,
-  coverageDirectory: "coverage",
+  coverageDirectory: "./coverage/",
   coveragePathIgnorePatterns: ignorePatterns,
   coverageReporters: ['json', 'lcovonly', 'text', 'clover'],
   coverageThreshold: {

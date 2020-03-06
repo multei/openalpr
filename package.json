@@ -8,6 +8,7 @@
   "browser": "dist/index.umd.js",
   "scripts": {
     "build": "rollup -c",
+    "ci": "npm run testc && npm run report-coverage",
     "dev": "npm run develop",
     "develop": "rollup -c -w",
     "jest": "jest",
@@ -15,9 +16,13 @@
     "prepare": "npm run build",
     "pretest": "npm run build",
     "preversion": "npm test",
+    "report-coverage": "codecov",
     "start": "npm run develop",
     "stryker": "stryker run",
     "test": "jest",
+    "testc": "jest --coverage",
+    "testu": "jest --u",
+    "testw": "jest --watch",
     "version": "npm run build"
   },
   "files": [
@@ -48,6 +53,7 @@
     "@stryker-mutator/javascript-mutator": "2.5.0",
     "@stryker-mutator/jest-runner": "2.5.0",
     "babel-jest": "25.1.0",
+    "codecov": "^3.6.5",
     "debug": "4.1.1",
     "husky": "4.2.3",
     "jest": "25.1.0",
