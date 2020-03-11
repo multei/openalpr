@@ -18,9 +18,9 @@
     "preversion": "npm test",
     "report-coverage": "codecov",
     "start": "npm run develop",
-    "stryker": "stryker run",
     "test": "jest",
-    "testc": "jest --coverage",
+    "testc": "jest --covxerage",
+    "testm": "stryker run",
     "testu": "jest --u",
     "testw": "jest --watch",
     "version": "npm run build"
