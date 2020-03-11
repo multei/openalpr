@@ -19,7 +19,7 @@
     "report-coverage": "codecov",
     "start": "npm run develop",
     "test": "jest",
-    "testc": "jest --covxerage",
+    "testc": "jest --coverage",
     "testm": "stryker run",
     "testu": "jest --u",
     "testw": "jest --watch",
