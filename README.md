@@ -127,12 +127,51 @@ const instance = openALPR.create(config)
 Currently, we support direct recognition only of base64 image files.
 If you are working with file inputs on HTML forms, you can use `toBase64()` and encode these images before.
 
-```
+##### Promise.then
+
+```js
 // ES6 way
 import toBase64 from 'openalpr/dist/toBase64'
 
 // RequireJS way
 const toBase64 = require('openalpr/dist/toBase64')
+
+function foo() {
+
+    const handleResult = result => {
+        // @todo recognize result
+    }
+    const handleError = error => {
+        console.error(error)
+    }
+    
+    toBase64(file).then(handleResult).catch(handleError)
+
+}
+```
+
+##### With try/catch
+
+```js
+// ES6 way
+import toBase64 from 'openalpr/dist/toBase64'
+
+// RequireJS way
+const toBase64 = require('openalpr/dist/toBase64')
+
+async function foo() {
+
+    let result;
+
+    try {
+       const result = await toBase64(file);
+        // @todo recognize result
+    }
+    catch (error) {
+       console.error(error)
+    }
+
+}
 ```
 
 #### With base64 strings
@@ -143,7 +182,7 @@ Let's suppose that we have some JPEG data encoded with base64:
 const imageData = 'data:image/jpeg;base64,ABCDEFGIHJKLMNOPQRSTUVWXY/Z'
 ```
 
-You can call `openalpr` `recognize` method, which returns a `Promise`:
+You can call `recognize` method from `openalpr`, which returns a `Promise`:
 
 ```
 instance.recognize(data)
