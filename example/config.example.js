@@ -7,4 +7,4 @@ const config = {
     secretKey: 'sk_123a4bc56d78e901fa2b3c45'
 }
 
-export default config
+module.exports = config
