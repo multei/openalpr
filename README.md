@@ -1,5 +1,6 @@
 # OpenALPR JavaScript SDK Documentation
 [![codecov](https://codecov.io/gh/multei/openalpr/branch/master/graph/badge.svg)](https://codecov.io/gh/multei/openalpr
+
 `openalpr` is a JS way to recognize license plates and vehicles using OpenALPR API.
 You can add `openalpr` to your Node.js (including Express) and web (including React) projects.
 
