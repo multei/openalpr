@@ -22,6 +22,7 @@ module.exports = {
   ],
   moduleFileExtensions: ["js"],
   roots: ['<rootDir>'],
+  testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   testPathIgnorePatterns: ignorePatterns,
   transformIgnorePatterns: ignorePatterns,
