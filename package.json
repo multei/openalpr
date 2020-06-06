@@ -47,7 +47,7 @@
     "@babel/preset-env": "7.10.2",
     "@rollup/plugin-commonjs": "12.0.0",
     "@rollup/plugin-json": "4.1.0",
-    "@rollup/plugin-node-resolve": "8.0.0",
+    "@rollup/plugin-node-resolve": "8.0.1",
     "@stryker-mutator/core": "3.2.4",
     "@stryker-mutator/html-reporter": "3.1.0",
     "@stryker-mutator/javascript-mutator": "3.2.4",
