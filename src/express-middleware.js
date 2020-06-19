@@ -3,15 +3,17 @@ import OpenALPR from "./index";
 
 const debug = Debug('openalpr:express-middleware')
 
-module.exports = (fileIndex, secretKey) => async (req, res, next) => {
+module.exports = (fileIndex) => async (req, res, next) => {
 
   debug('Entered OpenALPR middleware...')
 
-  if(typeof secretKey === 'undefined') {
+  if(typeof process.env.OPENALPR_SECRET_KEY === 'undefined') {
     throw new Error('Can not call OpenALPR API. Secret key is missing.')
   }
 
-  const openALPR = OpenALPR.create({ secretKey });
+  const openALPR = OpenALPR.create({
+    secretKey: process.env.OPENALPR_SECRET_KEY
+  });
 
   const handleRecognition = result => {
 
