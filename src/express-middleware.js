@@ -22,6 +22,9 @@ module.exports = (fileIndex) => async (req, res, next) => {
     if(result.status === 400) {
       throw new Error('Can not recognize data from image. OpenALPR returned 400')
     }
+    else if(result.results.length == 0) {
+      throw new Error('There is no car plate on image')
+    }
 
     debug('Success recognizing vehicle!');
     req.recognitionData = req.recognitionData || {};
