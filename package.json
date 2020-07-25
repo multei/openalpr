@@ -53,7 +53,7 @@
     "@stryker-mutator/javascript-mutator": "3.3.1",
     "@stryker-mutator/jest-runner": "3.3.1",
     "babel-jest": "26.1.0",
-    "codecov": "3.7.1",
+    "codecov": "3.7.2",
     "debug": "4.1.1",
     "husky": "4.2.5",
     "jest": "26.1.0",
