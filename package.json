@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/multei/openalpr#readme",
   "devDependencies": {
-    "@babel/core": "7.11.0",
+    "@babel/core": "7.11.1",
     "@babel/preset-env": "7.11.0",
     "@rollup/plugin-commonjs": "14.0.0",
     "@rollup/plugin-json": "4.1.0",
