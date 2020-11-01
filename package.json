@@ -57,7 +57,7 @@
     "debug": "4.2.0",
     "husky": "4.3.0",
     "jest": "26.6.1",
-    "rollup": "2.32.1"
+    "rollup": "2.33.0"
   },
   "dependencies": {
     "axios": "0.21.0"
