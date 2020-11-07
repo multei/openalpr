@@ -52,11 +52,11 @@
     "@stryker-mutator/html-reporter": "3.1.0",
     "@stryker-mutator/javascript-mutator": "4.0.0",
     "@stryker-mutator/jest-runner": "4.1.2",
-    "babel-jest": "26.6.1",
+    "babel-jest": "26.6.3",
     "codecov": "3.8.0",
     "debug": "4.2.0",
     "husky": "4.3.0",
-    "jest": "26.6.1",
+    "jest": "26.6.3",
     "rollup": "2.32.1"
   },
   "dependencies": {
